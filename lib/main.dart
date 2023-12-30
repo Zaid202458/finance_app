@@ -1,5 +1,4 @@
-import 'package:finance_app/home.dart';
-import 'package:finance_app/statistic.dart';
+import 'package:finance_app/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Bottom(),
     );
   }
 }
