@@ -120,38 +120,39 @@ class _StatisticsState extends State<Statistics> {
           ),
         ),
         SliverList(
-            delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            return ListTile(
-              leading: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Image.asset('images/${a[index].name}.png', height: 40),
-              ),
-              title: Text(
-                a[index].name,
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return ListTile(
+                leading: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: Image.asset('images/${a[index].name}.png', height: 40),
                 ),
-              ),
-              subtitle: Text(
-                ' ${a[index].datetime.year}-${a[index].datetime.day}-${a[index].datetime.month}',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w600,
+                title: Text(
+                  a[index].name,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              trailing: Text(
-                a[index].amount,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 19,
-                  color: a[index].IN == 'Income' ? Colors.green : Colors.red,
+                subtitle: Text(
+                  ' ${a[index].datetime.year}-${a[index].datetime.day}-${a[index].datetime.month}',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-            );
-          },
-          childCount: a.length,
-        ))
+                trailing: Text(
+                  a[index].amount,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 19,
+                    color: a[index].IN == 'Income' ? Colors.green : Colors.red,
+                  ),
+                ),
+              );
+            },
+            childCount: a.length,
+          ),
+        ),
       ],
     );
   }
